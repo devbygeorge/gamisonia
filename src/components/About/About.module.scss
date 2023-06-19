@@ -1,0 +1,37 @@
+@use "@/styles/variables.scss" as var;
+
+.about {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-block: 85px;
+  min-height: 100vh;
+  border: 1px solid var.$color-1;
+}
+
+.paragraph {
+  margin-bottom: 36px;
+  font-size: 20px;
+  color: rgba($color: var.$color-3, $alpha: 0.9);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.aboutImageContainer {
+  place-self: center;
+  position: relative;
+  width: 343px;
+  height: 460px;
+}
+
+.aboutImage {
+  object-fit: contain;
+}

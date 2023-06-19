@@ -1,0 +1,7 @@
+@use "@/styles/variables.scss" as var;
+
+.projects {
+  position: relative;
+  min-height: 100vh;
+  border: 1px solid var.$color-1;
+}

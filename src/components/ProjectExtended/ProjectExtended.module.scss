@@ -1,0 +1,54 @@
+.projectExtended {
+  position: relative;
+}
+
+.button {
+  margin-block: 10px 40px;
+}
+
+.activeImageContainer {
+  position: relative;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 720px;
+}
+
+.activeImage {
+  object-fit: cover;
+}
+
+.thumbsSwiper {
+  --swiper-theme-color: #151515;
+
+  margin-bottom: 40px;
+}
+
+.thumbSwiperSlide {
+  position: relative;
+  width: 200px;
+  height: 160px !important;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.thumbImage {
+  object-fit: cover;
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.detailsField {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 70px;
+  }
+}
+
+.detailsFieldLabel {
+  display: block;
+  text-transform: capitalize;
+}

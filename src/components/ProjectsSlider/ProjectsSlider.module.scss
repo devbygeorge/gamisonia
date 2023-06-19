@@ -1,0 +1,36 @@
+@use "@/styles/variables.scss" as var;
+
+.projectsSlider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+}
+
+.backgroundOverlay {
+  background-color: rgba($color: var.$color-1, $alpha: 0.5);
+  position: absolute;
+  inset: 0;
+}
+
+.projectsSwiper {
+  --swiper-theme-color: #151515;
+
+  flex: 1;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding-block: 50px !important;
+}
+
+.projectsSwiperSlide {
+  width: 860px !important;
+}

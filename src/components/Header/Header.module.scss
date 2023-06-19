@@ -1,0 +1,52 @@
+@use "@/styles/variables.scss" as var;
+
+.header {
+  position: relative;
+  padding-block: 27px;
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 57px;
+}
+
+.logoLink {
+  position: relative;
+  display: inline-flex;
+  width: 28px;
+  height: 48px;
+}
+
+.navList {
+  display: flex;
+  gap: 32px;
+  margin-left: auto;
+}
+
+.navLink {
+  text-transform: capitalize;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.flags {
+  display: flex;
+  gap: 10px;
+}
+
+.flagLink {
+  position: relative;
+  display: inline-flex;
+  width: 32px;
+  height: 20px;
+  filter: grayscale(1);
+
+  &:hover {
+    filter: grayscale(0.75);
+  }
+}

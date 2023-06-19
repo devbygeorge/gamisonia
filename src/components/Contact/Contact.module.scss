@@ -1,0 +1,73 @@
+@use "@/styles/variables.scss" as var;
+
+.contact {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  min-height: 100vh;
+}
+
+.imageContainer {
+  position: relative;
+  border: 1px solid var.$color-1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 85px;
+  background-color: var.$color-3;
+  color: var.$color-1;
+  border: 1px solid var.$color-1;
+}
+
+.paragraph {
+  margin-bottom: 32px;
+  width: 90%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 90%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.formLabel {
+  margin-left: 15px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.formInput {
+  display: block;
+  padding: 5px 15px 15px;
+  width: 100%;
+  min-height: 40px;
+  font-size: inherit;
+  font-weight: 600;
+  outline: none;
+  resize: none;
+  border: unset;
+  border-bottom: 1px solid rgba($color: var.$color-1, $alpha: 0.5);
+  line-height: 30px;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.7;
+  }
+}
+
+.formSubmit {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+}

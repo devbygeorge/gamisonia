@@ -1,0 +1,27 @@
+@use "@/styles/variables.scss" as var;
+
+.footer {
+  position: relative;
+  padding-block: 14px;
+  background-color: var.$color-1;
+  border: 1px solid var.$color-1;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  gap: 0;
+}
+
+.socialItem {
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

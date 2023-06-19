@@ -1,0 +1,31 @@
+@use "@/styles/variables.scss" as var;
+
+.projectItem {
+  position: relative;
+  background-color: var.$color-1;
+  padding: 30px;
+  padding-bottom: 0;
+  // width: 860px;
+}
+
+.imageContainer {
+  position: relative;
+  height: min(55vh, 590px); // 590px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 15px;
+}
+
+.link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
