@@ -1,9 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { FaFacebookMessenger } from "react-icons/fa";
 
 import s from "./Contact.module.scss";
 
 export default function Contact() {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+  };
+
   return (
     <section id="contact" className={s.contact}>
       <div className={s.imageContainer}>
@@ -18,7 +24,7 @@ export default function Contact() {
           9 am-7 pm GMT, please call +995 577 33 74 33
         </p>
 
-        <form className={s.form}>
+        <form className={s.form} onSubmit={handleSubmit}>
           <div className={s.formControl}>
             <label className={s.formLabel} htmlFor="name">
               full name
