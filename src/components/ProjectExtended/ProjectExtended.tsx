@@ -45,13 +45,18 @@ export default function ProjectExtended({ project }: Props) {
 
         <Swiper
           className={s.thumbsSwiper}
-          slidesPerView={5}
-          spaceBetween={30}
+          slidesPerView={4.5}
+          spaceBetween={10}
           pagination={{
             clickable: true,
           }}
           navigation={true}
           modules={[Pagination, Navigation]}
+          breakpoints={{
+            768: {
+              spaceBetween: 20,
+            },
+          }}
         >
           {image.map((thumb, i) => (
             <SwiperSlide
@@ -61,6 +66,7 @@ export default function ProjectExtended({ project }: Props) {
             >
               <Image
                 className={s.thumbImage}
+                data-active={activeImageIndex === i ? true : false}
                 src={sanityImageUrlBuilder(thumb)}
                 alt={thumb["description"]}
                 quality={100}
