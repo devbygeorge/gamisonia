@@ -1,4 +1,6 @@
+@use "@/styles/swiper.scss";
 @use "@/styles/variables.scss" as var;
+@use "@/styles/mixins.scss" as mix;
 
 * {
   box-sizing: border-box;
@@ -20,6 +22,11 @@ html {
 body {
   background-color: var.$color-2;
   color: var.$color-3;
+  font-size: 14px;
+
+  @include mix.respond-to(medium) {
+    font-size: 16px;
+  }
 }
 
 a {
@@ -61,8 +68,8 @@ button {
 
 .button {
   display: inline-block;
-  padding: 9px 41px;
-  font-size: 20px;
+  padding: 7px 32px;
+  font-size: 16px;
   border: 2px solid var.$color-3;
   text-transform: uppercase;
   transition: 150ms ease-in-out;
@@ -81,6 +88,11 @@ button {
       background-color: var.$color-1;
       color: var.$color-3;
     }
+  }
+
+  @include mix.respond-to(medium) {
+    padding: 9px 41px;
+    font-size: 20px;
   }
 }
 

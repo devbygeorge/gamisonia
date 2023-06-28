@@ -1,0 +1,9 @@
+@use "@/styles/mixins.scss" as mix;
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+  @include mix.mobile {
+    display: none !important;
+  }
+}

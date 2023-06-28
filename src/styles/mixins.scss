@@ -14,3 +14,9 @@ $breakpoints: (
     @warn "Unknown breakpoint: #{$breakpoint}.";
   }
 }
+
+@mixin mobile() {
+  @media (max-width: map-get($breakpoints, medium)) {
+    @content;
+  }
+}
