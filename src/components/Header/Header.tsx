@@ -21,17 +21,17 @@ export default function Header() {
 
           <ul className={s.navList}>
             <li className={s.navItem}>
-              <Link className={s.navLink} href="/#projects" scroll={false}>
+              <Link className={s.navLink} href="/#projects">
                 projects
               </Link>
             </li>
             <li className={s.navItem}>
-              <Link className={s.navLink} href="/#about" scroll={false}>
+              <Link className={s.navLink} href="/#about">
                 about
               </Link>
             </li>
             <li className={s.navItem}>
-              <Link className={s.navLink} href="/#contact" scroll={false}>
+              <Link className={s.navLink} href="/#contact">
                 contact
               </Link>
             </li>

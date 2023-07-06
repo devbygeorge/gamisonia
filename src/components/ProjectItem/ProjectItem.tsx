@@ -29,7 +29,7 @@ export default function ProjectItem({ project }: Props) {
 
       <div className={s.content}>
         <span className={s.title}>{title}</span>
-        <Link className={s.link} href={`/projects/${_id}`} scroll={false}>
+        <Link className={s.link} href={`/projects/${_id}`}>
           View Project
         </Link>
       </div>

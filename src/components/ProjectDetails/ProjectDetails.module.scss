@@ -1,46 +1,41 @@
 @use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
-.projectExtended {
+.projectDetails {
   position: relative;
 }
 
-.button {
-  margin-block: 0 20px;
+.mainSwiper {
+  margin-bottom: 15px;
 
   @include mix.respond-to(medium) {
-    margin-block: 10px 40px;
+    margin-bottom: 20px;
   }
 }
 
-.activeImageContainer {
+.mainSwiperSlide {
   position: relative;
-  margin-bottom: 20px;
   width: 100%;
   aspect-ratio: 1120 / 720;
-  border: 2px solid var.$color-1;
-
-  @include mix.respond-to(medium) {
-    margin-bottom: 40px;
-  }
+  max-height: 77.5vh;
+  overflow: hidden;
 }
 
-.activeImage {
+.mainImage {
   object-fit: cover;
+  border: 2px solid var.$color-1;
+  border-radius: 12px;
 }
 
 .thumbsSwiper {
-  --swiper-theme-color: #151515;
-
   margin-bottom: 20px;
 
   @include mix.mobile {
     width: calc(100% + 32px);
-    margin-left: -16px !important;
   }
 
   @include mix.respond-to(medium) {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 
@@ -55,29 +50,30 @@
   object-fit: cover;
   transition: 150ms ease-in-out;
 
-  border: 2px solid var.$color-1;
+  border: 1px solid var.$color-1;
+  border-radius: 12px;
 
   &:hover {
-    transform: scale(1.05);
+    border-color: var.$color-3;
   }
 
   &[data-active="true"] {
-    transform: scale(1.05);
+    border-color: var.$color-3;
   }
 }
 
 .detailsField {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   &:last-child {
     margin-bottom: 30px;
   }
 
   @include mix.respond-to(medium) {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     &:last-child {
-      margin-bottom: 70px;
+      margin-bottom: 50px;
     }
   }
 }

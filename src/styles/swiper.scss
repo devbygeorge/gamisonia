@@ -1,5 +1,9 @@
 @use "@/styles/mixins.scss" as mix;
 
+.swiper {
+  --swiper-theme-color: #151515;
+}
+
 .swiper-button-prev,
 .swiper-button-next,
 .swiper-pagination {

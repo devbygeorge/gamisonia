@@ -1,3 +1,4 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .footer {
@@ -9,8 +10,14 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
+
+  @include mix.respond-to(medium) {
+    flex-direction: row;
+  }
 }
 
 .socials {
@@ -20,8 +27,15 @@
 
 .socialItem {
   transition: 150ms ease-in-out;
+  width: 40px;
+  height: 40px;
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @include mix.respond-to(medium) {
+    width: 50px;
+    height: 50px;
   }
 }

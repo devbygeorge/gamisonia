@@ -1,3 +1,4 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .header {
@@ -10,20 +11,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 57px;
+  gap: 12px;
+
+  @include mix.respond-to(medium) {
+    gap: 57px;
+  }
 }
 
 .logoLink {
   position: relative;
   display: inline-flex;
-  width: 28px;
+  min-width: 28px;
   height: 48px;
 }
 
 .navList {
   display: flex;
-  gap: 32px;
+  gap: 12px;
   margin-left: auto;
+
+  @include mix.respond-to(medium) {
+    gap: 32px;
+  }
 }
 
 .navLink {
