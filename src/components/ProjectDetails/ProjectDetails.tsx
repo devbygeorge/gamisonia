@@ -37,12 +37,11 @@ export default function ProjectDetails({ project }: Props) {
         >
           {image.map((item, i) => (
             <SwiperSlide key={i} className={s.mainSwiperSlide}>
-              <Image
-                className={s.mainImage}
-                src="/placeholder-normal.jpg"
-                alt={item["description"]}
-                quality={100}
-                fill
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="placeholder-image"
+                src="/placeholder-small.jpg"
+                alt={image[0]["description"]}
               />
               <Image
                 className={s.mainImage}
@@ -73,13 +72,11 @@ export default function ProjectDetails({ project }: Props) {
       >
         {image.map((thumb, i) => (
           <SwiperSlide key={i} className={s.thumbSwiperSlide}>
-            <Image
-              className={s.thumbImage}
-              data-active={i == currentSlide}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="placeholder-image"
               src="/placeholder-small.jpg"
-              alt={thumb["description"]}
-              quality={100}
-              fill
+              alt={image[0]["description"]}
             />
             <Image
               className={s.thumbImage}
