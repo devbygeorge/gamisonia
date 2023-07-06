@@ -39,12 +39,17 @@ export default function ProjectDetails({ project }: Props) {
             <SwiperSlide key={i} className={s.mainSwiperSlide}>
               <Image
                 className={s.mainImage}
+                src="/placeholder-normal.jpg"
+                alt={item["description"]}
+                quality={100}
+                fill
+              />
+              <Image
+                className={s.mainImage}
                 src={sanityImageUrlBuilder(item)}
                 alt={item["description"]}
                 quality={100}
                 fill
-                placeholder="blur"
-                blurDataURL="/placeholder-normal.jpg"
               />
             </SwiperSlide>
           ))}
@@ -71,12 +76,18 @@ export default function ProjectDetails({ project }: Props) {
             <Image
               className={s.thumbImage}
               data-active={i == currentSlide}
+              src="/placeholder-small.jpg"
+              alt={thumb["description"]}
+              quality={100}
+              fill
+            />
+            <Image
+              className={s.thumbImage}
+              data-active={i == currentSlide}
               src={sanityImageUrlBuilder(thumb)}
               alt={thumb["description"]}
               quality={100}
               fill
-              placeholder="blur"
-              blurDataURL="/placeholder-small.jpg"
             />
           </SwiperSlide>
         ))}

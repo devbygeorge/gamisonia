@@ -18,12 +18,17 @@ export default function ProjectItem({ project }: Props) {
       <div className={s.imageContainer}>
         <Image
           className={s.image}
+          src="/placeholder-normal.jpg"
+          alt={image[0]["description"]}
+          quality={100}
+          fill
+        />
+        <Image
+          className={s.image}
           src={imageUrl}
           alt={image[0]["description"]}
           quality={100}
           fill
-          placeholder="blur"
-          blurDataURL="/placeholder-normal.jpg"
         />
       </div>
 
