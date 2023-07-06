@@ -1,3 +1,4 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .projectsSlider {
@@ -30,5 +31,9 @@
 }
 
 .projectsSwiperSlide {
-  width: 860px !important;
+  width: 80% !important;
+
+  @include mix.respond-to(medium) {
+    width: 860px !important;
+  }
 }

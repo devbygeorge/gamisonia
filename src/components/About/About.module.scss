@@ -1,35 +1,53 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .about {
   position: relative;
   display: flex;
   align-items: center;
-  padding-block: 85px;
+  padding-block: 25px;
   min-height: 100vh;
   border: 1px solid var.$color-1;
+
+  @include mix.respond-to(medium) {
+    padding-block: 85px;
+  }
 }
 
 .paragraph {
-  margin-bottom: 36px;
-  font-size: 20px;
+  margin-bottom: 26px;
+  font-size: 16px;
   color: rgba($color: var.$color-3, $alpha: 0.9);
 
   &:last-child {
     margin-bottom: 0;
   }
+
+  @include mix.respond-to(medium) {
+    margin-bottom: 36px;
+    font-size: 20px;
+  }
 }
 
 .columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  @include mix.respond-to(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
 }
 
 .aboutImageContainer {
   place-self: center;
   position: relative;
-  width: 343px;
-  height: 460px;
+  width: 243px;
+  aspect-ratio: 343 / 460;
+  margin: 40px auto 20px;
+
+  @include mix.respond-to(medium) {
+    width: 343px;
+    margin: unset;
+  }
 }
 
 .aboutImage {

@@ -1,10 +1,14 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .categoriesGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   min-height: 100vh;
+
+  @include mix.respond-to(medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
 .categoriesGridItem {
@@ -17,7 +21,9 @@
   overflow: hidden;
 
   &:first-child {
-    grid-row: 1/3;
+    @include mix.respond-to(medium) {
+      grid-row: 1/3;
+    }
   }
 }
 
@@ -32,7 +38,11 @@
 
 .categoriesGridLabel {
   position: relative;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 600;
   text-transform: capitalize;
+
+  @include mix.respond-to(medium) {
+    font-size: 36px;
+  }
 }

@@ -1,16 +1,25 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .projectItem {
   position: relative;
   background-color: var.$color-1;
-  padding: 30px;
+  padding: 15px;
   padding-bottom: 0;
-  // width: 860px;
+
+  @include mix.respond-to(medium) {
+    padding: 30px;
+    padding-bottom: 0;
+  }
 }
 
 .imageContainer {
   position: relative;
-  height: min(55vh, 590px); // 590px;
+  height: min(290px);
+
+  @include mix.respond-to(medium) {
+    height: min(55vh, 590px);
+  }
 }
 
 .image {
@@ -19,9 +28,21 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding-block: 15px;
+  gap: 8px;
+
+  @include mix.respond-to(medium) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.title {
+  @include mix.mobile {
+    font-weight: 600;
+  }
 }
 
 .link {

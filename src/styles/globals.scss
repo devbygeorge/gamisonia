@@ -55,14 +55,19 @@ button {
 }
 
 .section-title {
-  margin-bottom: 40px;
-  font-size: 36px;
+  margin-bottom: 12px;
+  font-size: 26px;
   font-weight: 600;
   color: var.$color-3;
   text-transform: capitalize;
 
   &[data-color="dark"] {
     color: var.$color-1;
+  }
+
+  @include mix.respond-to(medium) {
+    font-size: 36px;
+    margin-bottom: 40px;
   }
 }
 

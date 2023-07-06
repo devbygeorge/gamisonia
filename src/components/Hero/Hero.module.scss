@@ -1,3 +1,4 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .hero {
@@ -34,14 +35,24 @@
 
 .headline {
   position: relative;
-  margin-bottom: 9px;
-  width: 442px;
-  height: 57px;
+  margin-bottom: 13px;
+  width: 220px;
+  aspect-ratio: 442 / 57;
+
+  @include mix.respond-to(medium) {
+    width: 442px;
+    margin-bottom: 9px;
+  }
 }
 
 .subHeadline {
-  font-size: 74px;
+  font-size: 36px;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-transform: capitalize;
+
+  @include mix.respond-to(medium) {
+    font-size: 74px;
+    margin-bottom: 30px;
+  }
 }

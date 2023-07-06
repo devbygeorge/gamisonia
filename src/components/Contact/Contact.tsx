@@ -64,7 +64,7 @@ export default function Contact() {
             </label>
             <textarea
               className={s.formInput}
-              placeholder="Please provide the details of your inquiry or request in the message field below. Thank you!"
+              placeholder="Please provide your inquiry or request in the message field below. Thank you!"
               name="message"
             />
           </div>

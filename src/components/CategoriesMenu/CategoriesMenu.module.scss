@@ -1,3 +1,4 @@
+@use "@/styles/mixins.scss" as mix;
 @use "@/styles/variables.scss" as var;
 
 .menuWrapper {
@@ -9,14 +10,21 @@
 }
 
 .menuItem {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 70px;
+  padding: 20px 0;
   background-color: var.$color-1;
-  font-size: 26px;
+  font-size: 16px;
   text-transform: capitalize;
   cursor: pointer;
+
+  @include mix.respond-to(medium) {
+    flex: unset;
+    font-size: 26px;
+    padding: 30px 70px;
+  }
 
   // clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
   // min-width: 350px;
@@ -45,13 +53,19 @@
   align-items: center;
   background-color: var.$color-1;
   color: var.$color-3;
-  width: 34px;
-  height: 34px;
-  font-size: 20px;
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
   font-weight: 600;
   opacity: 0.7;
 
   &:hover {
     background-color: var.$color-2;
+  }
+
+  @include mix.respond-to(medium) {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
   }
 }

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import CategoriesMenu from "@/components/CategoriesMenu";
 import ProjectItem from "@/components/ProjectItem";
+import isMobileViewport from "@/utils/isMobileViewport";
 
 import s from "./ProjectsSlider.module.scss";
 import { Project } from "../../../typings";
@@ -51,7 +52,7 @@ export default function ProjectsSlider({
 
       <Swiper
         className={s.projectsSwiper}
-        effect={"coverflow"}
+        effect={isMobileViewport() ? "slide" : "coverflow"}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
@@ -64,7 +65,12 @@ export default function ProjectsSlider({
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        spaceBetween={80}
+        spaceBetween={20}
+        breakpoints={{
+          768: {
+            spaceBetween: 80,
+          },
+        }}
       >
         {projects[activeCategory as keyof typeof projects].map((project) => (
           <SwiperSlide key={project["_id"]} className={s.projectsSwiperSlide}>
