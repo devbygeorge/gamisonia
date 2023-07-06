@@ -9,7 +9,10 @@
   margin-top: -102px;
   padding-block: 85px;
   min-height: 100vh;
-  border: 1px solid var.$color-1;
+
+  @include mix.respond-to(medium) {
+    border: 1px solid var.$color-1;
+  }
 }
 
 .backgroundImage {

@@ -16,7 +16,6 @@ export default function ProjectItem({ project }: Props) {
   return (
     <div className={s.projectItem}>
       <div className={s.imageContainer}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="placeholder-image"
           src="/placeholder-normal.jpg"
