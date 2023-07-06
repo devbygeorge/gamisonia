@@ -1,11 +1,8 @@
 @use "@/styles/mixins.scss" as mix;
 
 .swiper {
-  --swiper-theme-color: #262626;
-}
+  --swiper-theme-color: #fff;
 
-.swiper-button-prev,
-.swiper-button-next {
   @include mix.mobile {
     --swiper-navigation-size: 36px;
   }

@@ -3,11 +3,10 @@
 import { useState } from "react";
 
 import Image from "next/image";
-import { Navigation, Pagination, Thumbs } from "swiper";
+import { Navigation, Thumbs } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
@@ -31,11 +30,8 @@ export default function ProjectDetails({ project }: Props) {
         <Swiper
           className={s.mainSwiper}
           slidesPerView={1}
-          pagination={{
-            clickable: true,
-          }}
           navigation={true}
-          modules={[Pagination, Navigation, Thumbs]}
+          modules={[Navigation, Thumbs]}
           thumbs={{ swiper: thumbsSwiper }}
           onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
         >

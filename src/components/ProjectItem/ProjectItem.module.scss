@@ -4,18 +4,16 @@
 .projectItem {
   position: relative;
   background-color: var.$color-1;
-  padding: 15px;
-  padding-bottom: 0;
-
-  @include mix.respond-to(medium) {
-    padding: 30px;
-    padding-bottom: 0;
-  }
+  border-radius: 24px;
 }
 
 .imageContainer {
   position: relative;
-  height: min(290px);
+  height: min(260px);
+  border: 2px solid var.$color-1;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  overflow: hidden;
 
   @include mix.respond-to(medium) {
     height: min(55vh, 590px);
@@ -30,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-block: 15px;
+  padding: 15px 30px;
   gap: 8px;
 
   @include mix.respond-to(medium) {
