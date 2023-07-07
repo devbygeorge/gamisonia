@@ -102,14 +102,19 @@ button {
 }
 
 .snap-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
+  @include mix.respond-to(medium) {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 }
 
 .snap-item {
-  scroll-snap-align: start;
+  @include mix.respond-to(medium) {
+    scroll-snap-align: start;
+  }
 }
 
 .placeholder-image {
