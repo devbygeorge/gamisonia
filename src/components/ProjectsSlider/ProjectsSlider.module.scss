@@ -28,13 +28,13 @@
 
   width: 100%;
   padding-block: 50px !important;
-  touch-action: none !important;
 }
 
 .projectsSwiperSlide {
   width: 80% !important;
   border-radius: 24px !important;
   overflow: hidden !important;
+  touch-action: none !important;
 
   @include mix.respond-to(medium) {
     width: 860px !important;
