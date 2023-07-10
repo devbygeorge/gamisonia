@@ -45,7 +45,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   font-size: 16px;
   font-weight: 600;
 
@@ -56,14 +56,15 @@
 }
 
 .formLabel {
-  margin-left: 15px;
+  display: block;
+  margin-bottom: 5px;
   text-transform: uppercase;
   opacity: 0.5;
 }
 
 .formInput {
   display: block;
-  padding: 5px 15px 15px;
+  // padding: 5px 15px 15px;
   width: 100%;
   min-height: 40px;
   font-size: inherit;
@@ -81,6 +82,10 @@
 
   @include mix.respond-to(medium) {
     line-height: 30px;
+  }
+
+  &:focus {
+    border-bottom-color: var.$color-4;
   }
 }
 
