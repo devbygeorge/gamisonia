@@ -7,7 +7,8 @@
 
 .mainSwiper {
   margin-bottom: 15px;
-  touch-action: none;
+  border: 2px solid var.$color-1;
+  touch-action: none !important;
 
   @include mix.respond-to(medium) {
     margin-bottom: 20px;
@@ -19,7 +20,6 @@
   width: 100%;
   aspect-ratio: 1120 / 720;
   max-height: 77.5vh;
-  border: 2px solid var.$color-1;
   overflow: hidden;
 }
 
@@ -47,7 +47,7 @@
 
   border: 2px solid var.$color-1;
   overflow: hidden;
-  touch-action: none;
+  touch-action: none !important;
 
   &:hover {
     border-color: var.$color-3;
