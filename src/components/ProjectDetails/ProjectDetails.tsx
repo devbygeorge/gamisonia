@@ -49,45 +49,43 @@ export default function ProjectDetails({ project }: Props) {
 
   return (
     <article className={s.projectDetails}>
-      <div className={s.activeImageContainer}>
-        <Swiper
-          id="mainSwiper"
-          className={s.mainSwiper}
-          slidesPerView={1}
-          navigation={true}
-          modules={[Navigation, Thumbs]}
-          thumbs={{ swiper: thumbsSwiper }}
-          onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
-        >
-          {image.map((item, i) => {
-            const imageUrl = sanityImageUrlBuilder(item);
-            return (
-              <SwiperSlide key={i} className={s.mainSwiperSlide}>
-                <a
-                  href={imageUrl}
-                  data-pswp-width={800}
-                  data-pswp-height={800}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    className="placeholder-image"
-                    src="/placeholder-normal.jpg"
-                    alt={image[0]["description"]}
-                  />
-                  <Image
-                    className={s.mainImage}
-                    src={imageUrl}
-                    alt={item["description"]}
-                    quality={100}
-                    fill
-                  />
-                </a>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
+      <Swiper
+        id="mainSwiper"
+        className={s.mainSwiper}
+        slidesPerView={1}
+        navigation={true}
+        modules={[Navigation, Thumbs]}
+        thumbs={{ swiper: thumbsSwiper }}
+        onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+      >
+        {image.map((item, i) => {
+          const imageUrl = sanityImageUrlBuilder(item);
+          return (
+            <SwiperSlide key={i} className={s.mainSwiperSlide}>
+              <a
+                href={imageUrl}
+                data-pswp-width={800}
+                data-pswp-height={800}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="placeholder-image"
+                  src="/placeholder-normal.jpg"
+                  alt={image[0]["description"]}
+                />
+                <Image
+                  className={s.mainImage}
+                  src={imageUrl}
+                  alt={item["description"]}
+                  quality={100}
+                  fill
+                />
+              </a>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
 
       <Swiper
         className={s.thumbsSwiper}

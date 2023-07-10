@@ -7,3 +7,7 @@
     --swiper-navigation-size: 36px;
   }
 }
+
+.swiper-button-disabled {
+  pointer-events: auto !important;
+}
