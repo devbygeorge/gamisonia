@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
+// @ts-ignore
+import PhotoSwipeLightbox from "photoswipe/lightbox";
 import { Navigation, Thumbs } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,6 +16,8 @@ import s from "./ProjectDetails.module.scss";
 import { sanityImageUrlBuilder } from "../../../sanity";
 import { Project } from "../../../typings";
 
+import "photoswipe/style.css";
+
 type Props = {
   project: Project;
 };
@@ -24,10 +28,30 @@ export default function ProjectDetails({ project }: Props) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  useEffect(() => {
+    let lightbox = new PhotoSwipeLightbox({
+      gallery: "#" + "mainSwiper",
+      children: "a",
+      showHideAnimationType: "fade",
+      mouseMovePan: true,
+      initialZoomLevel: "fit",
+      secondaryZoomLevel: 2,
+      maxZoomLevel: 1,
+      pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+
+    return () => {
+      lightbox.destroy();
+      lightbox = null;
+    };
+  }, []);
+
   return (
     <article className={s.projectDetails}>
       <div className={s.activeImageContainer}>
         <Swiper
+          id="mainSwiper"
           className={s.mainSwiper}
           slidesPerView={1}
           navigation={true}
@@ -35,22 +59,33 @@ export default function ProjectDetails({ project }: Props) {
           thumbs={{ swiper: thumbsSwiper }}
           onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
         >
-          {image.map((item, i) => (
-            <SwiperSlide key={i} className={s.mainSwiperSlide}>
-              <img
-                className="placeholder-image"
-                src="/placeholder-normal.jpg"
-                alt={image[0]["description"]}
-              />
-              <Image
-                className={s.mainImage}
-                src={sanityImageUrlBuilder(item)}
-                alt={item["description"]}
-                quality={100}
-                fill
-              />
-            </SwiperSlide>
-          ))}
+          {image.map((item, i) => {
+            const imageUrl = sanityImageUrlBuilder(item);
+            return (
+              <SwiperSlide key={i} className={s.mainSwiperSlide}>
+                <a
+                  href={imageUrl}
+                  data-pswp-width={800}
+                  data-pswp-height={800}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className="placeholder-image"
+                    src="/placeholder-normal.jpg"
+                    alt={image[0]["description"]}
+                  />
+                  <Image
+                    className={s.mainImage}
+                    src={imageUrl}
+                    alt={item["description"]}
+                    quality={100}
+                    fill
+                  />
+                </a>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
 
