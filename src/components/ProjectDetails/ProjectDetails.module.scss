@@ -30,10 +30,6 @@
 .thumbsSwiper {
   margin-bottom: 20px;
 
-  @include mix.mobile {
-    width: calc(100% + 32px);
-  }
-
   @include mix.respond-to(medium) {
     margin-bottom: 30px;
   }
