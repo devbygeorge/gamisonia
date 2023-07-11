@@ -24,6 +24,7 @@ export default function CategoriesGrid(props: Props) {
             alt={`${category} image`}
             quality={100}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <span className={s.categoriesGridLabel}>{category}</span>
         </div>

@@ -13,7 +13,13 @@ export default function Contact() {
   return (
     <section id="contact" className={s.contact}>
       <div className={s.imageContainer}>
-        <Image src="/architecture.jpg" alt="Contact Image" quality={100} fill />
+        <Image
+          src="/architecture.jpg"
+          alt="Contact Image"
+          quality={100}
+          fill
+          sizes="50vw"
+        />
       </div>
       <div className={s.content}>
         <h2 className="section-title" data-color="dark">

@@ -27,6 +27,7 @@ export default function ProjectItem({ project }: Props) {
           alt={image[0]["description"]}
           quality={100}
           fill
+          sizes="(max-width: 768px) 600px, 860px"
         />
       </div>
 

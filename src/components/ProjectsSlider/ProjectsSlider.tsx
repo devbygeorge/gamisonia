@@ -40,6 +40,7 @@ export default function ProjectsSlider({
         alt={`${activeCategory} image`}
         quality={100}
         fill
+        sizes="100vw"
       />
       <div className={s.backgroundOverlay}></div>
 

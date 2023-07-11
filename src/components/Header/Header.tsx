@@ -16,6 +16,7 @@ export default function Header() {
               quality={100}
               priority
               fill
+              sizes="28px"
             />
           </Link>
 
@@ -46,6 +47,7 @@ export default function Header() {
                 quality={100}
                 priority
                 fill
+                sizes="32px"
               />
             </Link>
             <Link className={s.flagLink} href="#">
@@ -56,6 +58,7 @@ export default function Header() {
                 quality={100}
                 priority
                 fill
+                sizes="32px"
               />
             </Link>
           </div>

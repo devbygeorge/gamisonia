@@ -63,6 +63,7 @@ export default function ProjectDetails({ project }: Props) {
           return (
             <SwiperSlide key={i} className={s.mainSwiperSlide}>
               <a
+                className={s.mainImageWrapper}
                 href={imageUrl}
                 data-pswp-width={800}
                 data-pswp-height={800}
@@ -80,6 +81,7 @@ export default function ProjectDetails({ project }: Props) {
                   alt={item["description"]}
                   quality={100}
                   fill
+                  sizes="(max-width: 1200) 100vw, 1120px"
                 />
               </a>
             </SwiperSlide>
@@ -119,6 +121,7 @@ export default function ProjectDetails({ project }: Props) {
               alt={thumb["description"]}
               quality={100}
               fill
+              sizes="185px"
             />
           </SwiperSlide>
         ))}

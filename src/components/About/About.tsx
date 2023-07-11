@@ -27,6 +27,7 @@ export default async function About() {
               alt={aboutImageNew["description"]}
               quality={100}
               fill
+              sizes="(max-width: 768px) 243px, 343px"
             />
           </div>
         </div>

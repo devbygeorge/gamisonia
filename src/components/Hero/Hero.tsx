@@ -19,6 +19,7 @@ export default async function Hero() {
         quality={100}
         priority
         fill
+        sizes="100vw"
       />
 
       <div className={s.backgroundOverlay}></div>
@@ -31,6 +32,7 @@ export default async function Hero() {
             quality={100}
             priority
             fill
+            sizes="(max-width: 768px) 220px, 442px"
           />
         </h1>
         <span className={s.subHeadline}>design studio</span>
