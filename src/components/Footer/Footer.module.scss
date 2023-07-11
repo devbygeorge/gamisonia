@@ -5,7 +5,7 @@
   position: relative;
   padding-block: 14px;
   background-color: var.$color-1;
-  
+
   @include mix.respond-to(medium) {
     border: 1px solid var.$color-1;
   }
@@ -20,6 +20,16 @@
 
   @include mix.respond-to(medium) {
     flex-direction: row;
+  }
+}
+
+.authors {
+  text-align: center;
+}
+
+.developer {
+  &:hover {
+    text-decoration: underline;
   }
 }
 

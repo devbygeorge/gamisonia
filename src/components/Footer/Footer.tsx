@@ -28,9 +28,16 @@ export default async function Footer() {
     <footer className={s.footer}>
       <div className="container">
         <div className={s.content}>
-          <span>
-            &copy; 2022 - {new Date().getFullYear()} Anushka Gamisonia
-          </span>
+          <div className={s.authors}>
+            &copy; 2022 - {new Date().getFullYear()} Anushka Gamisonia |{" "}
+            <a
+              className={s.developer}
+              href="https://devbygeorge.com"
+              target="_blank"
+            >
+              DevByGeorge
+            </a>
+          </div>
           <ul className={s.socials}>
             {socials.map((social) => (
               <li className={s.socialItem} key={social["_id"]}>
