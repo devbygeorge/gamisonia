@@ -1,9 +1,12 @@
+import { useContext } from "react";
+
 import Image from "next/image";
 import { EffectCoverflow, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import CategoriesMenu from "@/components/CategoriesMenu";
 import ProjectItem from "@/components/ProjectItem";
+import { CategoriesContext } from "@/context/categories.context";
 import isMobileViewport from "@/utils/isMobileViewport";
 
 import s from "./ProjectsSlider.module.scss";
@@ -19,19 +22,14 @@ type Props = {
     architecture: Project[];
     object: Project[];
   };
-  categories: string[];
-  activeCategory: string;
-  changeActiveCategory: (category: string) => void;
-  resetActiveCategory: () => void;
 };
 
-export default function ProjectsSlider({
-  projects,
-  categories,
-  activeCategory,
-  changeActiveCategory,
-  resetActiveCategory,
-}: Props) {
+export default function ProjectsSlider({ projects }: Props) {
+  const {
+    state: { activeCategory, activeSlide },
+    dispatch,
+  } = useContext(CategoriesContext);
+
   return (
     <div className={s.projectsSlider}>
       <Image
@@ -44,12 +42,7 @@ export default function ProjectsSlider({
       />
       <div className={s.backgroundOverlay}></div>
 
-      <CategoriesMenu
-        activeCategory={activeCategory}
-        categories={categories}
-        changeActiveCategory={changeActiveCategory}
-        resetActiveCategory={resetActiveCategory}
-      />
+      <CategoriesMenu />
 
       <Swiper
         className={s.projectsSwiper}
@@ -71,6 +64,10 @@ export default function ProjectsSlider({
           768: {
             spaceBetween: 80,
           },
+        }}
+        initialSlide={activeSlide}
+        onSlideChange={(swiper) => {
+          dispatch({ type: "CHANGE_SLIDE", payload: swiper.activeIndex });
         }}
       >
         {projects[activeCategory as keyof typeof projects].map((project) => (

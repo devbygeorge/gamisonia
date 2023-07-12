@@ -1,22 +1,23 @@
+import { useContext } from "react";
+
 import Image from "next/image";
+
+import { CategoriesContext } from "@/context/categories.context";
 
 import s from "./CategoriesGrid.module.scss";
 
-type Props = {
-  categories: string[];
-  changeActiveCategory: (category: string) => void;
-};
-
-export default function CategoriesGrid(props: Props) {
-  const { categories, changeActiveCategory } = props;
+export default function CategoriesGrid() {
+  const { state, dispatch } = useContext(CategoriesContext);
 
   return (
     <div className={s.categoriesGrid}>
-      {categories.map((category: string) => (
+      {state.categories.map((category: string) => (
         <div
           key={category}
           className={s.categoriesGridItem}
-          onClick={() => changeActiveCategory(category)}
+          onClick={() =>
+            dispatch({ type: "CHANGE_CATEGORY", payload: category })
+          }
         >
           <Image
             className={s.categoriesGridImage}

@@ -1,37 +1,29 @@
+import { useContext } from "react";
+
 import { FaChevronLeft } from "react-icons/fa";
+
+import { CategoriesContext } from "@/context/categories.context";
 
 import s from "./CategoriesMenu.module.scss";
 
-type Props = {
-  activeCategory: string;
-  categories: string[];
-  changeActiveCategory: (category: string) => void;
-  resetActiveCategory: () => void;
-};
-
-export default function CategoriesMenu(props: Props) {
-  const {
-    activeCategory,
-    categories,
-    changeActiveCategory,
-    resetActiveCategory,
-  } = props;
+export default function CategoriesMenu() {
+  const { state, dispatch } = useContext(CategoriesContext);
 
   return (
     <div className={s.menuWrapper}>
       <ul className={s.menu}>
-        {categories.map((category: string) => (
+        {state.categories.map((category: string) => (
           <li
             key={category}
             className={s.menuItem}
-            data-active={activeCategory == category}
-            onClick={() => changeActiveCategory(category)}
+            data-active={state.activeCategory == category}
+            onClick={() => dispatch({ type: "CHANGE_CATEGORY" , payload: category })}
           >
             <span className={s.menuItemText}>{category}</span>
           </li>
         ))}
       </ul>
-      <button className={s.closeButton} onClick={resetActiveCategory}>
+      <button className={s.closeButton} onClick={() => dispatch({})}>
         <FaChevronLeft />
       </button>
     </div>

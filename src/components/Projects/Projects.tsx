@@ -1,14 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
 
 import CategoriesGrid from "@/components/CategoriesGrid";
 import ProjectsSlider from "@/components/ProjectsSlider";
+import { CategoriesContext } from "@/context/categories.context";
 
 import s from "./Projects.module.scss";
 import { Project } from "../../../typings";
-
-const categories = ["interior", "architecture", "object"];
 
 type Props = {
   projects: {
@@ -19,31 +18,14 @@ type Props = {
 };
 
 export default function Projects({ projects }: Props) {
-  const [activeCategory, setActiveCategory] = useState<null | string>(null);
-
-  const changeActiveCategory = (category: string) => {
-    setActiveCategory(category);
-  };
-
-  const resetActiveCategory = () => {
-    setActiveCategory(null);
-  };
+  const { state } = useContext(CategoriesContext);
 
   return (
     <section id="projects" className={s.projects}>
-      {!activeCategory ? (
-        <CategoriesGrid
-          categories={categories}
-          changeActiveCategory={changeActiveCategory}
-        />
+      {!state.activeCategory ? (
+        <CategoriesGrid />
       ) : (
-        <ProjectsSlider
-          projects={projects}
-          categories={categories}
-          activeCategory={activeCategory}
-          changeActiveCategory={changeActiveCategory}
-          resetActiveCategory={resetActiveCategory}
-        />
+        <ProjectsSlider projects={projects} />
       )}
     </section>
   );

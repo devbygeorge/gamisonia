@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/SrollToTop";
+import { CategoriesContextProvider } from "@/context/categories.context";
 
 const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
 
@@ -36,7 +37,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <ScrollToTop />
         <Header />
-        {children}
+        <CategoriesContextProvider>{children}</CategoriesContextProvider>
         <Footer />
       </body>
       <Analytics />
