@@ -1,0 +1,29 @@
+{
+  "Index": {
+    "projects": "projects",
+    "about": "about",
+    "contact": "contact",
+
+    "interior": "interion",
+    "architecture": "architecture",
+    "object": "object",
+
+    "view-project": "view project",
+    "submit": "submit",
+    "back": "back",
+
+    "about-us": "about us",
+    "contact-us": "contact us",
+
+    "full-name": "full name",
+    "email-address": "email address",
+    "phone-number": "phone number",
+    "your-full-name": "your full name",
+    "your-email-address": "your email address",
+    "your-phone-number": "your phone number",
+
+    "name": "name",
+    "category": "category",
+    "description": "description"
+  }
+}

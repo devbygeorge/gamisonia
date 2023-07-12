@@ -1,0 +1,31 @@
+{
+  "Index": {
+    "projects": "პროექტები",
+    "about": "შესახებ",
+    "contact": "კონტაქტი",
+
+    "interior": "ინტერიერი",
+    "architecture": "არქიტექტურა",
+    "object": "ობიექტი",
+
+    "view-project": "სრულად ნახვა",
+    "submit": "გაგზავნა",
+    "back": "დაბრუნება",
+
+    "about-us": "ჩვენს შესახებ",
+    "contact-us": "კონტაქტი",
+
+    "full-name": "სრული სახელი",
+    "email-address": "იმეილის მისამართი",
+    "phone-number": "ტელეფონის ნომერი",
+    "message": "შეტყობინება",
+    "your-full-name": "თქვენი სრული სახელი",
+    "your-email-address": "თქვენი იმეილის მისამართი",
+    "your-phone-number": "თქვენი ტელეფონის ნომერი",
+    "enter-message": "თქვენი შეტყობინება",
+
+    "name": "name",
+    "category": "category",
+    "description": "description"
+  }
+}
