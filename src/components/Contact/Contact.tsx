@@ -4,8 +4,15 @@ import Image from "next/image";
 import { FaFacebookMessenger } from "react-icons/fa";
 
 import s from "./Contact.module.scss";
+import { PageInfo } from "../../../typings";
 
-export default function Contact() {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+export default function Contact({ pageInfo }: Props) {
+  const { contactText } = pageInfo;
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
@@ -25,10 +32,7 @@ export default function Contact() {
         <h2 className="section-title" data-color="dark">
           Contact Us
         </h2>
-        <p className={s.paragraph}>
-          For immediate assistance during business hours, Monday through Friday
-          9 am-7 pm GMT, please call +995 577 33 74 33
-        </p>
+        <p className={s.paragraph}>{contactText}</p>
 
         <form className={s.form} onSubmit={handleSubmit}>
           <div className={s.formControl}>

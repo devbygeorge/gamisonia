@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext } from "react";
 
 import Image from "next/image";
@@ -10,32 +12,24 @@ import { CategoriesContext } from "@/context/categories.context";
 import isMobileViewport from "@/utils/isMobileViewport";
 
 import s from "./ProjectsSlider.module.scss";
-import { Project } from "../../../typings";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { Projects } from "../../../typings";
 
 type Props = {
-  projects: {
-    interior: Project[];
-    architecture: Project[];
-    object: Project[];
-  };
+  projects: Projects;
 };
 
 export default function ProjectsSlider({ projects }: Props) {
-  const {
-    state: { activeCategory, activeSlide },
-    dispatch,
-  } = useContext(CategoriesContext);
+  const { state, dispatch } = useContext(CategoriesContext);
 
   return (
     <div className={s.projectsSlider}>
       <Image
         className={s.backgroundImage}
-        src={`/${activeCategory}.jpg`}
-        alt={`${activeCategory} image`}
+        src={`/${state.activeCategory}.jpg`}
+        alt={`${state.activeCategory} image`}
         quality={100}
         fill
         sizes="100vw"
@@ -65,16 +59,18 @@ export default function ProjectsSlider({ projects }: Props) {
             spaceBetween: 80,
           },
         }}
-        initialSlide={activeSlide}
+        initialSlide={state.activeSlide}
         onSlideChange={(swiper) => {
           dispatch({ type: "CHANGE_SLIDE", payload: swiper.activeIndex });
         }}
       >
-        {projects[activeCategory as keyof typeof projects].map((project) => (
-          <SwiperSlide key={project["_id"]} className={s.projectsSwiperSlide}>
-            <ProjectItem project={project} />
-          </SwiperSlide>
-        ))}
+        {projects[state.activeCategory as keyof typeof projects].map(
+          (project) => (
+            <SwiperSlide key={project["_id"]} className={s.projectsSwiperSlide}>
+              <ProjectItem project={project} />
+            </SwiperSlide>
+          )
+        )}
       </Swiper>
     </div>
   );

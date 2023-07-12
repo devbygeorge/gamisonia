@@ -1,13 +1,16 @@
 import Image from "next/image";
 
-import getPageInfo from "@/utils/getPageInfo";
-
 import s from "./About.module.scss";
 import { sanityImageUrlBuilder } from "../../../sanity";
+import { PageInfo } from "../../../typings";
 
-export default async function About() {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+export default function About({ pageInfo }: Props) {
   const { aboutParagraph1, aboutParagraph2, aboutParagraph3, aboutImageNew } =
-    await getPageInfo();
+    pageInfo;
   const aboutImageUrl = sanityImageUrlBuilder(aboutImageNew);
 
   return (

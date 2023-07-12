@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import getPageInfo from "@/utils/getPageInfo";
-
 import s from "./Hero.module.scss";
 import { sanityImageUrlBuilder } from "../../../sanity";
+import { PageInfo } from "../../../typings";
 
-export default async function Hero() {
-  const { heroImage } = await getPageInfo();
+type Props = {
+  pageInfo: PageInfo;
+};
+
+export default function Hero({ pageInfo }: Props) {
+  const { heroImage } = pageInfo;
   const heroImageUrl = sanityImageUrlBuilder(heroImage);
 
   return (

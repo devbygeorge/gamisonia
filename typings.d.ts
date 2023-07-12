@@ -33,6 +33,12 @@ export interface Project extends SanityBody {
   image: Image[];
 }
 
+export interface Projects {
+  interior: Project[];
+  architecture: Project[];
+  object: Project[];
+}
+
 export interface Social extends SanityBody {
   _type: "social";
   title: string;

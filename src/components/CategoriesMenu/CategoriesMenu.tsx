@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext } from "react";
 
 import { FaChevronLeft } from "react-icons/fa";
@@ -17,7 +19,9 @@ export default function CategoriesMenu() {
             key={category}
             className={s.menuItem}
             data-active={state.activeCategory == category}
-            onClick={() => dispatch({ type: "CHANGE_CATEGORY" , payload: category })}
+            onClick={() =>
+              dispatch({ type: "CHANGE_CATEGORY", payload: category })
+            }
           >
             <span className={s.menuItemText}>{category}</span>
           </li>

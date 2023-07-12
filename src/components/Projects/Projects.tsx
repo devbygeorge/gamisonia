@@ -7,14 +7,10 @@ import ProjectsSlider from "@/components/ProjectsSlider";
 import { CategoriesContext } from "@/context/categories.context";
 
 import s from "./Projects.module.scss";
-import { Project } from "../../../typings";
+import { Projects } from "../../../typings";
 
 type Props = {
-  projects: {
-    interior: Project[];
-    architecture: Project[];
-    object: Project[];
-  };
+  projects: Projects;
 };
 
 export default function Projects({ projects }: Props) {
