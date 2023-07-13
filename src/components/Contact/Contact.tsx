@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { FaFacebookMessenger } from "react-icons/fa";
 
 import s from "./Contact.module.scss";
@@ -12,6 +13,8 @@ type Props = {
 
 export default function Contact({ pageInfo }: Props) {
   const { contactText } = pageInfo;
+
+  const t = useTranslations("Index");
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -30,56 +33,56 @@ export default function Contact({ pageInfo }: Props) {
       </div>
       <div className={s.content}>
         <h2 className="section-title" data-color="dark">
-          Contact Us
+          {t("contact-us")}
         </h2>
         <p className={s.paragraph}>{contactText}</p>
 
         <form className={s.form} onSubmit={handleSubmit}>
           <div className={s.formControl}>
             <label className={s.formLabel} htmlFor="name">
-              full name
+              {t("full-name")}
             </label>
             <input
               className={s.formInput}
               type="text"
-              placeholder="Your Full Name"
+              placeholder={t("your-full-name")}
               name="name"
             />
           </div>
           <div className={s.formControl}>
             <label className={s.formLabel} htmlFor="email">
-              email address
+              {t("email-address")}
             </label>
             <input
               className={s.formInput}
               type="text"
-              placeholder="Your Email Address"
+              placeholder={t("your-email-address")}
               name="email"
             />
           </div>
           <div className={s.formControl}>
             <label className={s.formLabel} htmlFor="phone">
-              phone number
+              {t("phone-number")}
             </label>
             <input
               className={s.formInput}
               type="text"
-              placeholder="Your Phone Number"
+              placeholder={t("your-phone-number")}
               name="phone"
             />
           </div>
           <div className={s.formControl}>
             <label className={s.formLabel} htmlFor="message">
-              message
+              {t("message")}
             </label>
             <textarea
               className={s.formInput}
-              placeholder="Your Message"
+              placeholder={t("enter-message")}
               name="message"
             />
           </div>
           <button className={`${s.formSubmit} button`} data-color="dark">
-            Submit
+            {t("submit")}
             <FaFacebookMessenger />
           </button>
         </form>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import s from "./ProjectItem.module.scss";
 import { sanityImageUrlBuilder } from "../../../sanity";
@@ -12,6 +13,8 @@ type Props = {
 export default function ProjectItem({ project }: Props) {
   const { _id, title, image } = project;
   const imageUrl = sanityImageUrlBuilder(image[0]);
+
+  const t = useTranslations("Index");
 
   return (
     <div className={s.projectItem}>
@@ -34,7 +37,7 @@ export default function ProjectItem({ project }: Props) {
       <div className={s.content}>
         <span className={s.title}>{title}</span>
         <Link className={s.link} href={`/projects/${_id}`}>
-          View Project
+          {t("view-project")}
         </Link>
       </div>
     </div>

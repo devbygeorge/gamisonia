@@ -44,6 +44,8 @@
 }
 
 .link {
+  text-transform: capitalize;
+
   &:hover {
     text-decoration: underline;
   }

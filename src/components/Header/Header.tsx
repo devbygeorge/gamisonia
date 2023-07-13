@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import s from "./Header.module.scss";
 
 export default function Header() {
+  const t = useTranslations("Index");
+
   return (
     <header className={s.header}>
       <div className="container">
@@ -23,17 +26,17 @@ export default function Header() {
           <ul className={s.navList}>
             <li className={s.navItem}>
               <Link className={s.navLink} href="/#projects">
-                projects
+                {t("projects")}
               </Link>
             </li>
             <li className={s.navItem}>
               <Link className={s.navLink} href="/#about">
-                about
+                {t("about")}
               </Link>
             </li>
             <li className={s.navItem}>
               <Link className={s.navLink} href="/#contact">
-                contact
+                {t("contact")}
               </Link>
             </li>
           </ul>

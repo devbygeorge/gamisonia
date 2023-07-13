@@ -1,8 +1,5 @@
-import Link from "next/link";
-
 import ProjectDetails from "@/components/ProjectDetails";
 import ScrollToTop from "@/components/SrollToTop";
-import s from "@/styles/Projects.module.scss";
 import getProject from "@/utils/getProject";
 
 type Props = {
@@ -18,13 +15,7 @@ export default async function Project({ params }: Props) {
   return (
     <main className="main">
       <ScrollToTop />
-      <div className="container">
-        <Link className={`${s.button} button`} href="/#projects">
-          back
-        </Link>
-
-        <ProjectDetails project={project} />
-      </div>
+      <ProjectDetails project={project} />
     </main>
   );
 }

@@ -64,7 +64,6 @@
 
 .formInput {
   display: block;
-  // padding: 5px 15px 15px;
   width: 100%;
   min-height: 40px;
   font-size: inherit;
@@ -78,6 +77,7 @@
   &::placeholder {
     color: inherit;
     opacity: 0.7;
+    text-transform: capitalize;
   }
 
   @include mix.respond-to(medium) {

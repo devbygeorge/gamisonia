@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import s from "./About.module.scss";
 import { sanityImageUrlBuilder } from "../../../sanity";
@@ -13,10 +14,12 @@ export default function About({ pageInfo }: Props) {
     pageInfo;
   const aboutImageUrl = sanityImageUrlBuilder(aboutImageNew);
 
+  const t = useTranslations("Index");
+
   return (
     <section id="about" className={s.about}>
       <div className="container">
-        <h2 className="section-title">about us</h2>
+        <h2 className="section-title">{t("about-us")}</h2>
         <p className={s.paragraph}>{aboutParagraph1}</p>
         <div className={s.columns}>
           <div>

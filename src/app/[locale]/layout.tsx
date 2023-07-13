@@ -2,7 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.scss";
 import { Poppins } from "next/font/google";
 import { notFound } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -25,7 +25,7 @@ export default function RootLayout({
   params: { locale: string };
 }) {
   const intlLocale = useLocale();
-  const t = useTranslations("Index");
+  const messages = useMessages();
 
   // Show a 404 error if the user requests an unknown locale
   if (locale !== intlLocale) {
@@ -36,9 +36,11 @@ export default function RootLayout({
     <html lang={intlLocale}>
       <body className={poppins.className}>
         <ScrollToTop />
-        <Header />
-        <CategoriesContextProvider>{children}</CategoriesContextProvider>
-        <Footer />
+        <NextIntlClientProvider locale={intlLocale} messages={messages}>
+          <Header />
+          <CategoriesContextProvider>{children}</CategoriesContextProvider>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
       <Analytics />
     </html>

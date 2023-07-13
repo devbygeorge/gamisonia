@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import s from "./Hero.module.scss";
 import { sanityImageUrlBuilder } from "../../../sanity";
@@ -12,6 +13,8 @@ type Props = {
 export default function Hero({ pageInfo }: Props) {
   const { heroImage } = pageInfo;
   const heroImageUrl = sanityImageUrlBuilder(heroImage);
+
+  const t = useTranslations("Index");
 
   return (
     <section className={s.hero}>
@@ -40,7 +43,7 @@ export default function Hero({ pageInfo }: Props) {
         </h1>
         <span className={s.subHeadline}>design studio</span>
         <Link className="button" href="/#projects">
-          projects
+          {t("projects")}
         </Link>
       </div>
     </section>
