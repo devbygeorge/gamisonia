@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import IntlLink from "next-intl/link";
 
 import s from "./Header.module.scss";
 
@@ -42,7 +43,7 @@ export default function Header() {
           </ul>
 
           <div className={s.flags}>
-            <Link className={s.flagLink} href="#">
+            <IntlLink className={s.flagLink} href="/" locale="en">
               <Image
                 className={s.flagImage}
                 src="/flag-usa.svg"
@@ -52,8 +53,8 @@ export default function Header() {
                 fill
                 sizes="32px"
               />
-            </Link>
-            <Link className={s.flagLink} href="#">
+            </IntlLink>
+            <IntlLink className={s.flagLink} href="/" locale="ge">
               <Image
                 className={s.flagImage}
                 src="/flag-geo.svg"
@@ -63,7 +64,7 @@ export default function Header() {
                 fill
                 sizes="32px"
               />
-            </Link>
+            </IntlLink>
           </div>
         </nav>
       </div>

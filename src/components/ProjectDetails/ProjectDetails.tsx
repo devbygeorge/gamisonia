@@ -144,7 +144,7 @@ export default function ProjectDetails({ project }: Props) {
         <div className={s.detailsField}>
           <span className={s.detailsFieldLabel}>{t("category")}:</span>
           <span className={s.detailsFieldValue} data-capitalize>
-            {category}
+            {t(category)}
           </span>
         </div>
 

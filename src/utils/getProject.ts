@@ -1,9 +1,7 @@
 import sanityDataFetcher from "./sanityDataFetcher";
 import sanityUrlBuilder from "./sanityUrlBuilder";
 
-const locale = "en";
-
-async function getProject(id: string) {
+async function getProject(id: string, locale: string) {
   const projectQuery = `
     *[_id == "${id}"][0] {
       "_id": _id,

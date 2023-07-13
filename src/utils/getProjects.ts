@@ -1,9 +1,8 @@
 import sanityDataFetcher from "./sanityDataFetcher";
 import sanityUrlBuilder from "./sanityUrlBuilder";
 
-const locale = "en";
-
-const interiorGroqQuery = `
+async function getProjects(locale: string) {
+  const interiorGroqQuery = `
     *[_type == "project" && category == "interior"] | order(lower(name) asc) {
       "_id": _id,
       "category": category,
@@ -12,7 +11,7 @@ const interiorGroqQuery = `
     }
   `;
 
-const architectureGroqQuery = `
+  const architectureGroqQuery = `
     *[_type == "project" && category == "architecture"] | order(lower(name) asc) {
       "_id": _id,
       "category": category,
@@ -21,7 +20,7 @@ const architectureGroqQuery = `
     }
   `;
 
-const objectGroqQuery = `
+  const objectGroqQuery = `
     *[_type == "project" && category == "object"] | order(lower(name) asc) {
       "_id": _id,
       "category": category,
@@ -30,11 +29,10 @@ const objectGroqQuery = `
     }
   `;
 
-const interiorUrl = sanityUrlBuilder(interiorGroqQuery);
-const architectureUrl = sanityUrlBuilder(architectureGroqQuery);
-const objectUrl = sanityUrlBuilder(objectGroqQuery);
+  const interiorUrl = sanityUrlBuilder(interiorGroqQuery);
+  const architectureUrl = sanityUrlBuilder(architectureGroqQuery);
+  const objectUrl = sanityUrlBuilder(objectGroqQuery);
 
-async function getProjects() {
   const [interior, architecture, object] = await Promise.all([
     sanityDataFetcher(interiorUrl),
     sanityDataFetcher(architectureUrl),

@@ -1,9 +1,8 @@
 import sanityDataFetcher from "./sanityDataFetcher";
 import sanityUrlBuilder from "./sanityUrlBuilder";
 
-const locale = "en";
-
-const pageInfoGroqQuery = `
+async function getPageInfo(locale: string) {
+  const pageInfoGroqQuery = `
     *[_type == "pageInfo"][0] {
       "heroImage": heroImage,
       "aboutParagraph1": aboutParagraph1.${locale},
@@ -13,9 +12,9 @@ const pageInfoGroqQuery = `
       "contactText": contactText.${locale},
     }
   `;
-const pageInfoUrl = sanityUrlBuilder(pageInfoGroqQuery);
 
-async function getPageInfo() {
+  const pageInfoUrl = sanityUrlBuilder(pageInfoGroqQuery);
+
   const pageInfo = sanityDataFetcher(pageInfoUrl);
   return pageInfo;
 }

@@ -5,9 +5,13 @@ import Projects from "@/components/Projects";
 import getPageInfo from "@/utils/getPageInfo";
 import getProjects from "@/utils/getProjects";
 
-export default async function Home() {
-  const pageInfo = await getPageInfo();
-  const projects = await getProjects();
+export default async function Home({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const pageInfo = await getPageInfo(locale);
+  const projects = await getProjects(locale);
 
   return (
     <main className="main">
