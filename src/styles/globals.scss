@@ -19,9 +19,10 @@ html {
   scroll-behavior: smooth !important;
 
   font-family: var(--font-poppins);
-  
+
   &[lang="ge"] {
     font-family: var(--font-firago);
+    line-height: 1.5;
   }
 }
 
