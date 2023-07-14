@@ -32,6 +32,17 @@ export default function ProjectDetails({ project }: Props) {
 
   const t = useTranslations("Index");
 
+  function getImageDimensions(url: string) {
+    const regex = /(\d+)x(\d+)/;
+    const match = url.match(regex);
+    if (match) {
+      const width = parseInt(match[1], 10);
+      const height = parseInt(match[2], 10);
+      return { width, height };
+    }
+    return null;
+  }
+
   useEffect(() => {
     let lightbox = new PhotoSwipeLightbox({
       gallery: "#" + "mainSwiper",
@@ -69,13 +80,23 @@ export default function ProjectDetails({ project }: Props) {
         >
           {image.map((item, i) => {
             const imageUrl = sanityImageUrlBuilder(item);
+            const dimensions = getImageDimensions(imageUrl);
+            let width = 800;
+            let height = 800;
+
+            if (dimensions) {
+              width = dimensions.width;
+              height = dimensions.height;
+            }
+            console.log(width, height);
+
             return (
               <SwiperSlide key={i} className={s.mainSwiperSlide}>
                 <a
                   className={s.mainImageWrapper}
                   href={imageUrl}
-                  data-pswp-width={800}
-                  data-pswp-height={800}
+                  data-pswp-width={width}
+                  data-pswp-height={height}
                   target="_blank"
                   rel="noreferrer"
                 >
