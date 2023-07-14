@@ -18,10 +18,13 @@
     "full-name": "full name",
     "email-address": "email address",
     "phone-number": "phone number",
+    "message": "message",
     "your-full-name": "your full name",
     "your-email-address": "your email address",
     "your-phone-number": "your phone number",
     "enter-message": "enter message",
+    "thank-you-for-getting-in-touch": "Thank you for getting in touch!",
+    "unable-to-send-message": "Unable to send message",
 
     "name": "name",
     "category": "category",

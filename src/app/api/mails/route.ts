@@ -2,14 +2,15 @@ import { NextRequest } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
-  const { name, email, message } = await req.json();
+  const { name, email, phone, message } = await req.json();
 
   try {
     await transporter.sendMail({
       ...mailOptions,
-      subject: "New email from portfolio",
-      html: ` <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
+      subject: "New email from gamisonia.com",
+      html: ` <p><strong>Full Name:</strong> ${name}</p>
+                <p><strong>Email Address:</strong> ${email}</p>
+                <p><strong>Phone Number:</strong> ${phone}</p>
                 <p><strong>Message:</strong> ${message}</p>`,
     });
     return new Response("Mail Sent", { status: 201 });
