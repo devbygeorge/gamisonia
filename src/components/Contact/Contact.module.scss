@@ -73,6 +73,7 @@
   border: unset;
   border-bottom: 1px solid rgba($color: var.$color-1, $alpha: 0.5);
   line-height: 24px;
+  font-family: inherit;
 
   &::placeholder {
     color: inherit;
@@ -90,8 +91,9 @@
 }
 
 textarea.formInput {
-  min-height: 80px;
-  font-family: inherit;
+  @include mix.respond-to(medium) {
+    min-height: 80px;
+  }
 }
 
 .formSubmit {
@@ -99,7 +101,6 @@ textarea.formInput {
   align-self: flex-start;
   align-items: center;
   gap: 10px;
-  margin-top: 12px;
   font-size: 18px;
   font-weight: 600;
   text-transform: capitalize;

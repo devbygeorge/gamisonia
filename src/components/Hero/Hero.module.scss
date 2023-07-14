@@ -53,6 +53,7 @@
   font-weight: 500;
   margin-bottom: 20px;
   text-transform: capitalize;
+  font-family: var(--font-poppins);
 
   @include mix.respond-to(medium) {
     font-size: 74px;

@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.scss";
 import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, useLocale, useMessages } from "next-intl";
 
@@ -9,7 +10,18 @@ import Header from "@/components/Header";
 import ScrollToTop from "@/components/SrollToTop";
 import { CategoriesContextProvider } from "@/context/categories.context";
 
-const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
+const poppins = Poppins({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
+// Font files can be colocated inside of `app`
+const firago = localFont({
+  src: "./Firago.otf",
+  display: "swap",
+  variable: "--font-firago",
+});
 
 export const metadata = {
   title: "GAMISONIA Design Studio",
@@ -33,8 +45,11 @@ export default function RootLayout({
   }
 
   return (
-    <html lang={intlLocale}>
-      <body className={poppins.className}>
+    <html
+      lang={intlLocale}
+      className={`${poppins.variable} ${firago.variable}`}
+    >
+      <body>
         <ScrollToTop />
         <NextIntlClientProvider locale={intlLocale} messages={messages}>
           <Header />
