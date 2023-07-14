@@ -46,6 +46,11 @@ button {
   cursor: pointer;
 }
 
+.main {
+  position: relative;
+  z-index: 1;
+}
+
 .container {
   $padding-inline: 16px;
 
