@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; text-decoration: none;
+      color: inherit; font: inherit; background-color: inherit; } body {
+      font-family: "Poppins", sans-serif; } .logo { display: block; width:
+      165px; height: 285px; object-fit: contain; margin-bottom: 42px; }
+      .template { background-color: #262626; width: 800px; color: #fff;
+      padding-top: 69px; padding-bottom: 69px; } .heading { height: 73px;
+      border-top: 2px solid #fff; border-bottom: 2px solid #fff; font-size:
+      19px; font-weight: 500; background-color: #151515; } .table { width:
+      645px; background-color: #151515; position: relative; border-collapse:
+      collapse; } .table-item { border: 3px solid #fff; min-height: 75px;
+      padding-left: 29px; padding-right: 29px; padding-top: 25px;
+      padding-bottom: 25px; font-size: 19px; font-weight: 400; text-align: left;
+      } .table-label { width: 240px; } .last-item { min-height: 123px; flex: 1;
+      } .default { color: inherit; font: inherit; } .full-width { width: 100%; }
+      .bottom-space { margin-bottom: 60px; }
+    </style>
+  </head>
+  <body>
+    <div class="template">
+      <table class="default full-width">
+        <tr>
+          <td align="center">
+            <img
+              class="logo"
+              src="https://cdn.sanity.io/images/h5wxax3b/production/d3964e67ea9aebb8087b42bfe8cb299c988293b0-343x593.png?w=2000&fit=max&auto=format"
+              alt="gamisonia"
+            />
+          </td>
+        </tr>
+      </table>
+      <table class="default full-width bottom-space">
+        <tr>
+          <td align="center" class="heading">
+            You Got An Email From gamisonia.com
+          </td>
+        </tr>
+      </table>
+
+      <table class="default full-width">
+        <tr>
+          <td align="center">
+            <table class="table default">
+              <tr>
+                <th class="table-item table-label">Full Name</th>
+                <td class="table-item">{{name}}</td>
+              </tr>
+              <tr>
+                <th class="table-item table-label">Email Address</th>
+                <td class="table-item">{{email}}</td>
+              </tr>
+              <tr>
+                <th class="table-item table-label">Phone Number</th>
+                <td class="table-item">{{phone}}</td>
+              </tr>
+              <tr>
+                <th class="table-item table-label">Message</th>
+                <td class="table-item">{{message}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
