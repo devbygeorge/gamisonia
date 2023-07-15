@@ -2,6 +2,7 @@ import fs from "fs";
 import handlebars from "handlebars";
 import { NextRequest } from "next/server";
 import nodemailer from "nodemailer";
+import path from "path";
 import { promisify } from "util";
 
 const readFile = promisify(fs.readFile);
@@ -9,8 +10,13 @@ const readFile = promisify(fs.readFile);
 export async function POST(req: NextRequest) {
   const { name, email, phone, message } = await req.json();
 
+  const emailTemplatePath = path.join(
+    process.cwd(),
+    "src/views/email.handlebars"
+  );
+
   try {
-    let html = await readFile("src/views/email.handlebars", "utf8");
+    let html = await readFile(emailTemplatePath, "utf8");
     let template = handlebars.compile(html);
     let data = {
       name,
