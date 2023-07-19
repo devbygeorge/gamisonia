@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { FaFacebookMessenger } from "react-icons/fa";
 
 import s from "./Contact.module.scss";
 import { PageInfo } from "../../../typings";
@@ -141,8 +140,7 @@ export default function Contact({ pageInfo }: Props) {
             data-color="dark"
             data-disabled={isSubmitting}
           >
-            {t("submit")}
-            <FaFacebookMessenger />
+            {t("send")}
           </button>
         </form>
       </div>
