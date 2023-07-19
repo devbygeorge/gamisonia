@@ -23,6 +23,12 @@ const firago = localFont({
   variable: "--font-firago",
 });
 
+const aquire = localFont({
+  src: "./Aquire.otf",
+  display: "swap",
+  variable: "--font-aquire",
+});
+
 export const metadata = {
   title: "GAMISONIA Design Studio",
   description:
@@ -47,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang={intlLocale}
-      className={`${poppins.variable} ${firago.variable}`}
+      className={`${poppins.variable} ${firago.variable} ${aquire.variable}`}
     >
       <body>
         <ScrollToTop />

@@ -31,17 +31,8 @@ export default function Hero({ pageInfo }: Props) {
       <div className={s.backgroundOverlay}></div>
 
       <div className={s.textWrapper}>
-        <h1 className={s.headline}>
-          <Image
-            src="/headline.svg"
-            alt="GAMISONIA"
-            quality={100}
-            priority
-            fill
-            sizes="(max-width: 768px) 220px, 442px"
-          />
-        </h1>
-        <span className={s.subHeadline}>design studio</span>
+        <h1 className={s.headline}>gamisonia</h1>
+        <h2 className={s.subHeadline}>design studio</h2>
         <Link className="button" href="/#projects">
           {t("projects")}
         </Link>

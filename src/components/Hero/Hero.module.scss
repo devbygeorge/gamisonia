@@ -37,14 +37,16 @@
 }
 
 .headline {
-  position: relative;
+  font-size: 36px;
+  font-weight: 500;
   margin-bottom: 13px;
-  width: 220px;
-  aspect-ratio: 442 / 57;
+  text-transform: capitalize;
+  font-family: var(--font-aquire);
+  line-height: 1;
 
   @include mix.respond-to(medium) {
-    width: 442px;
-    margin-bottom: 9px;
+    font-size: 74px;
+    margin-bottom: 15px;
   }
 }
 
@@ -53,7 +55,8 @@
   font-weight: 500;
   margin-bottom: 20px;
   text-transform: capitalize;
-  font-family: var(--font-poppins);
+  font-family: var(--font-aquire);
+  line-height: 1;
 
   @include mix.respond-to(medium) {
     font-size: 74px;
