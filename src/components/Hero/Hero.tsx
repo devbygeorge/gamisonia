@@ -31,11 +31,8 @@ export default function Hero({ pageInfo }: Props) {
       <div className={s.backgroundOverlay}></div>
 
       <div className={s.textWrapper}>
-        <h1 className={s.headline}>gamisonia</h1>
-        <h2 className={s.subHeadline}>design studio</h2>
-        <Link className="button" href="/#projects">
-          {t("projects")}
-        </Link>
+        <h1 className={s.headline}>GAMISONIA</h1>
+        <h2 className={s.subHeadline}>Architecture . Interior . Furniture</h2>
       </div>
     </section>
   );

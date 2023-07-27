@@ -37,29 +37,28 @@
 }
 
 .headline {
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 13px;
-  text-transform: capitalize;
-  font-family: var(--font-aquire);
+  margin-bottom: 3px;
+  font-size: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: var(--font-neolatina);
   line-height: 1;
 
   @include mix.respond-to(medium) {
+    margin-bottom: 0;
     font-size: 74px;
-    margin-bottom: 15px;
   }
 }
 
 .subHeadline {
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 400;
   text-transform: capitalize;
   font-family: var(--font-aquire);
   line-height: 1;
+  letter-spacing: 1px;
 
   @include mix.respond-to(medium) {
-    font-size: 74px;
-    margin-bottom: 30px;
+    font-size: 20px;
   }
 }

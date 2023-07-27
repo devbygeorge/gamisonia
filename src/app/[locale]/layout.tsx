@@ -23,10 +23,10 @@ const firago = localFont({
   variable: "--font-firago",
 });
 
-const aquire = localFont({
-  src: "./Aquire.otf",
+const neolatina = localFont({
+  src: "./Neolatina.ttf",
   display: "swap",
-  variable: "--font-aquire",
+  variable: "--font-neolatina",
 });
 
 export const metadata = {
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang={intlLocale}
-      className={`${poppins.variable} ${firago.variable} ${aquire.variable}`}
+      className={`${poppins.variable} ${firago.variable} ${neolatina.variable}`}
     >
       <body>
         <ScrollToTop />
