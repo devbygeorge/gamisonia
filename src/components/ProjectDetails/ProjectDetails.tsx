@@ -78,7 +78,7 @@ export default function ProjectDetails({ project }: Props) {
           thumbs={{ swiper: thumbsSwiper }}
           onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
         >
-          {image.map((item, i) => {
+          {image?.map((item, i) => {
             const imageUrl = sanityImageUrlBuilder(item);
             const dimensions = getImageDimensions(imageUrl);
             let width = 800;
@@ -134,7 +134,7 @@ export default function ProjectDetails({ project }: Props) {
           }}
           onSwiper={setThumbsSwiper}
         >
-          {image.map((thumb, i) => (
+          {image?.map((thumb, i) => (
             <SwiperSlide
               key={i}
               className={s.thumbSwiperSlide}

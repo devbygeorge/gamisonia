@@ -12,7 +12,8 @@ type Props = {
 
 export default function ProjectItem({ project }: Props) {
   const { _id, title, image } = project;
-  const imageUrl = sanityImageUrlBuilder(image[0]);
+  const imageUrl = image?.length ? sanityImageUrlBuilder(image[0]) : "";
+  const imageDescription = image?.length ? image[0]["description"] : "";
 
   const t = useTranslations("Index");
 
@@ -22,12 +23,12 @@ export default function ProjectItem({ project }: Props) {
         <img
           className="placeholder-image"
           src="/placeholder-normal.jpg"
-          alt={image[0]["description"]}
+          alt={imageDescription}
         />
         <Image
           className={s.image}
           src={imageUrl}
-          alt={image[0]["description"]}
+          alt={imageDescription}
           quality={100}
           fill
           sizes="(max-width: 768px) 600px, 860px"
