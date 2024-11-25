@@ -10,5 +10,10 @@ const config = {
 
 const sanityClient = createClient(config);
 
-export const sanityImageUrlBuilder = (source: any) =>
-  imageUrlBuilder(sanityClient).image(source).url();
+export const sanityImageUrlBuilder = (source: any) => {
+  if (source?.asset) {
+    return imageUrlBuilder(sanityClient).image(source).url();
+  }
+
+  return "";
+};
